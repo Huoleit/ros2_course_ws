@@ -1,0 +1,62 @@
+{
+	"name": "ROS Course Docker Container",
+	"build": {
+		"context": ".",
+		"dockerfile": "Dockerfile",
+		"args": {
+			"BUILDKIT_INLINE_CACHE": "0"
+		}
+	},
+	"runArgs": [
+		// Uncomment it if you have problems with the auto X11 forwarding
+		// "--volume=/tmp/.X11-unix/X0:/tmp/.X11-unix/X0", 
+		"--shm-size=1g"
+	],
+	// "privileged": true,
+	"containerEnv": {
+		"DISPLAY": ":1",
+		"MPLBACKEND": "Qt5Agg",
+		// Change the resolution to match your screen resolution with the following format: WIDTHxHEIGHTxDEPTH
+		// If using TigerVNC client, no need to change this,
+		// as the resolution will be automatically adjusted to the client's screen resolution
+		"VNC_RESOLUTION": "1920x1080x32"
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {},
+		"ghcr.io/devcontainers/features/desktop-lite:1": {
+			"password": "roscourse"
+		}
+	},
+	"postCreateCommand": "bash ./.devcontainer/post-create.sh",
+	"forwardPorts": [
+		6080,
+		5901
+	],
+	"portsAttributes": {
+		"6080": {
+			"label": "VNC web client (noVNC)",
+			"onAutoForward": "silent"
+		},
+		"5901": {
+			"label": "VNC TCP port",
+			"onAutoForward": "silent"
+		}
+	},
+	"otherPortsAttributes": {
+		"onAutoForward": "ignore"
+	},
+	"containerUser": "ros-user",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-iot.vscode-ros",
+				"redhat.vscode-xml",
+				"ms-vscode.cpptools-extension-pack",
+				"eamodio.gitlens",
+				"mhutchie.git-graph",
+				"ms-python.python",
+				"tombonnike.vscode-status-bar-format-toggle"
+			]
+		}
+	}
+}
