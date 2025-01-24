@@ -1,0 +1,5 @@
+{
+    "git.autoRepositoryDetection": true,
+    "git.repositoryScanMaxDepth": 3,
+    "terminal.integrated.defaultProfile.linux": "zsh"
+}

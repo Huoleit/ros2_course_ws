@@ -9,35 +9,35 @@
 	},
 	"runArgs": [
 		// Uncomment it if you have problems with the auto X11 forwarding
-		// "--volume=/tmp/.X11-unix/X0:/tmp/.X11-unix/X0", 
+		// "--volume=/tmp/.X11-unix/X0:/tmp/.X11-unix/X0",
 		"--shm-size=1g"
 	],
-	// "privileged": true,
 	"containerEnv": {
-		"DISPLAY": ":1",
-		"MPLBACKEND": "Qt5Agg",
+		// VNC use DISPLAY :5. If using X11 forwarding, comment the following line 
+		"DISPLAY": ":5",
 		// Change the resolution to match your screen resolution with the following format: WIDTHxHEIGHTxDEPTH
 		// If using TigerVNC client, no need to change this,
 		// as the resolution will be automatically adjusted to the client's screen resolution
-		"VNC_RESOLUTION": "1920x1080x32"
+		"VNC_RESOLUTION": "1920x1080x32",
+		"MPLBACKEND": "Qt5Agg"
 	},
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {},
 		"ghcr.io/devcontainers/features/desktop-lite:1": {
-			"password": "roscourse"
+			"vncPort": 5905
 		}
 	},
 	"postCreateCommand": "bash ./.devcontainer/post-create.sh",
 	"forwardPorts": [
 		6080,
-		5901
+		5905
 	],
 	"portsAttributes": {
 		"6080": {
 			"label": "VNC web client (noVNC)",
 			"onAutoForward": "silent"
 		},
-		"5901": {
+		"5905": {
 			"label": "VNC TCP port",
 			"onAutoForward": "silent"
 		}
