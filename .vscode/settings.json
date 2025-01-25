@@ -1,5 +1,11 @@
 {
     "git.autoRepositoryDetection": true,
-    "git.repositoryScanMaxDepth": 3,
-    "terminal.integrated.defaultProfile.linux": "zsh"
+    "git.repositoryScanMaxDepth": 5,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ]
 }

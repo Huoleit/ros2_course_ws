@@ -1,5 +1,6 @@
 .zsh_history
 .bash_history
 logs/
+log/
 build/
 install/

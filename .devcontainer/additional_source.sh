@@ -33,4 +33,4 @@ source_general /usr/share/colcon_argcomplete/hook/colcon-argcomplete
 source_general /opt/ros/$ROS_DISTRO/share/ros2cli/environment/ros2-argcomplete
 
 # Add alias
-alias wssetup="source ${ROS_WORKSPACE_FOLDER}/install/setup.bash"
+alias wssetup="source_general ${ROS_WORKSPACE_FOLDER}/install/setup"

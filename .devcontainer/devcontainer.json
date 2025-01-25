@@ -13,7 +13,7 @@
 		"--shm-size=1g"
 	],
 	"containerEnv": {
-		// VNC use DISPLAY :5. If using X11 forwarding, comment the following line 
+		// VNC uses DISPLAY :5. If using X11 forwarding, comment the following line 
 		"DISPLAY": ":5",
 		// Change the resolution to match your screen resolution with the following format: WIDTHxHEIGHTxDEPTH
 		// If using TigerVNC client, no need to change this,
