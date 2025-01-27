@@ -30,4 +30,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
     x11-apps \
     vim \
+    # visualize the robot model in rviz (required by robot_description package)
+    ros-jazzy-joint-state-publisher-gui \
     && rm -rf /var/lib/apt/lists/*
