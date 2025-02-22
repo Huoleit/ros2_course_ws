@@ -4,3 +4,4 @@ logs/
 log/
 build/
 install/
+.cache
